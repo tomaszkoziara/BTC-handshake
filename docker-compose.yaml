@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  btcd:
+    image: local/btcd
+    command:
+      - --regtest
+      - --debuglevel=info
+      - --debuglevel=PEER=debug
+    ports:
+      - "8333:8333" # 8333  Mainnet Bitcoin peer-to-peer port
+      - "8334:8334" # 8334  Mainet RPC port
+      - "18333:18333" # 18333  Testnet Bitcoin peer-to-peer port
+      - "18334:18334" # 18334  Testnet RPC port
+      - "18444:18444" # 18444  Regnet Bitcoin peer-to-peer port
